@@ -375,4 +375,9 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+const totalPaidByLocation = bills.reduce((prev, cur) => {
+    prev[cur.location] = (prev[cur.location] || 0) + cur.total
+    return prev
+}, {});
+
+console.log(totalPaidByLocation)
